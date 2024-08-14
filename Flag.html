@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Flag Hoisting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .flagpole {
+            margin-top: 5%;
+            width: 10px;
+            height: 400px;
+            background-color: #4B4B4B;
+            position: relative;
+            margin-bottom: -15%;
+        }
+
+        .flag {
+            width: 150px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .hoist-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #FF9933;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .hoist-btn:hover {
+            background-color: #FF5733;
+        }
+
+        #base {
+            display: inline;
+            font-size: 100px;
+            color: #4B4B4B;
+        }
+        .box{
+            border: 5px solid black;
+        }
+        .message {
+            display: none;
+            font-size: 48px;
+            color: #FF9933; /* Saffron color */
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px #138808; /* Green shadow */
+            
+        }
+
+        .message span {
+            color: #138808; /* Green color */
+        }
+
+        .message::before {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background-color: #FF9933;
+            margin: 10px auto;
+        }
+
+        .message::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background-color: #138808;
+            margin: 10px auto;
+        }
+        #flowers {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: auto;
+            opacity: 0.7; /* Adjust the opacity for visibility */
+            z-index: 2;
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <center>
+    <div class="box">
+        
+        <img src="flowers.gif" id="flowers">
+        <div class="flagpole">
+            <div class="flag" id="flag">
+                <img src="Flag_of_India.gif">
+            </div>
+        </div>
+        <div id="base">_____________</div>
+        <br>
+        <div class="message" id="message">Happy 78th Independence Day!</div>
+        <button class="hoist-btn" id="btn" onclick="hoistFlag()">Hoist Flag</button>
+    </div>
+    </center>
+
+    <script>
+        function hoistFlag() {
+            const flag = document.getElementById('flag');
+            const message = document.getElementById('message');
+            const btn = document.getElementById('btn');
+            const f=document.getElementById('flowers');
+            btn.style.display = 'none';
+            flag.style.display = 'flex';
+            message.style.display = 'block';
+            f.style.display='block';
+        }
+    </script>
+</body>
+
+</html>
